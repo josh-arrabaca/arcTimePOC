@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import type { Role } from '@/lib/types';
 import { LogIn } from 'lucide-react';
+import { AppLogo } from '@/components/icons/app-logo';
 
 export default function LoginPage() {
   const { user, loading, signIn } = useAuth();
@@ -35,9 +36,12 @@ export default function LoginPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-background text-center">
       <div className="flex flex-col items-center justify-center rounded-lg border bg-card p-8 shadow-sm">
-        <h1 className="font-headline text-5xl font-bold text-primary">
-          TimeWise
-        </h1>
+        <div className="flex items-center gap-3">
+          <AppLogo className="h-12 w-12 text-primary" />
+          <h1 className="font-headline text-5xl font-bold text-primary">
+            ArcTimeIn
+          </h1>
+        </div>
         <p className="mt-2 text-lg text-muted-foreground">
           Track your time, master your work.
         </p>

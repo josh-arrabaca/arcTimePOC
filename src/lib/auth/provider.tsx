@@ -15,10 +15,10 @@ export const AuthContext = createContext<AuthContextType | undefined>(undefined)
 // This is a mock provider for demonstration purposes.
 // In a real app, you would integrate with Firebase Auth.
 const mockUsers: Record<Role, User> = {
-  admin: { uid: 'admin-uid', email: 'admin@timewise.com', displayName: 'Admin User', photoURL: 'https://picsum.photos/seed/1/100/100', role: 'admin' },
-  'project-manager': { uid: 'pm-uid', email: 'pm@timewise.com', displayName: 'Project Manager', photoURL: 'https://picsum.photos/seed/2/100/100', role: 'project-manager' },
-  finance: { uid: 'finance-uid', email: 'finance@timewise.com', displayName: 'Finance User', photoURL: 'https://picsum.photos/seed/3/100/100', role: 'finance' },
-  developer: { uid: 'dev-uid', email: 'developer@timewise.com', displayName: 'Developer User', photoURL: 'https://picsum.photos/seed/4/100/100', role: 'developer' },
+  admin: { uid: 'admin-uid', email: 'admin@arctimein.com', displayName: 'Admin User', photoURL: 'https://picsum.photos/seed/1/100/100', role: 'admin' },
+  'project-manager': { uid: 'pm-uid', email: 'pm@arctimein.com', displayName: 'Project Manager', photoURL: 'https://picsum.photos/seed/2/100/100', role: 'project-manager' },
+  finance: { uid: 'finance-uid', email: 'finance@arctimein.com', displayName: 'Finance User', photoURL: 'https://picsum.photos/seed/3/100/100', role: 'finance' },
+  developer: { uid: 'dev-uid', email: 'developer@arctimein.com', displayName: 'Developer User', photoURL: 'https://picsum.photos/seed/4/100/100', role: 'developer' },
 };
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
@@ -27,13 +27,13 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     try {
-      const storedUser = localStorage.getItem('timewise-user');
+      const storedUser = localStorage.getItem('arctimein-user');
       if (storedUser) {
         setUser(JSON.parse(storedUser));
       }
     } catch (error) {
       console.error("Failed to parse user from localStorage", error);
-      localStorage.removeItem('timewise-user');
+      localStorage.removeItem('arctimein-user');
     } finally {
       setLoading(false);
     }
@@ -43,14 +43,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setLoading(true);
     const mockUser = mockUsers[role];
     setUser(mockUser);
-    localStorage.setItem('timewise-user', JSON.stringify(mockUser));
+    localStorage.setItem('arctimein-user', JSON.stringify(mockUser));
     setLoading(false);
   };
 
   const signOut = () => {
     setLoading(true);
     setUser(null);
-    localStorage.removeItem('timewise-user');
+    localStorage.removeItem('arctimein-user');
     setLoading(false);
   };
 

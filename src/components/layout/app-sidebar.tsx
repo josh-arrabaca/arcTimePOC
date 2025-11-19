@@ -17,11 +17,11 @@ import {
   BarChart,
   Users,
   FileText,
-  Gem,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { User } from "@/lib/types";
+import { AppLogo } from '@/components/icons/app-logo';
 
 interface AppSidebarProps {
   user: User;
@@ -46,9 +46,9 @@ export function AppSidebar({ user }: AppSidebarProps) {
     <Sidebar>
       <SidebarHeader className="border-b border-sidebar-border">
         <Link href="/dashboard" className="flex items-center gap-2">
-            <Gem className="h-6 w-6 text-primary" />
+            <AppLogo className="h-8 w-8 text-primary" />
             <h1 className="font-headline text-2xl font-bold text-sidebar-foreground">
-              TimeWise
+              ArcTimeIn
             </h1>
         </Link>
       </SidebarHeader>
