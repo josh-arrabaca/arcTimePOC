@@ -16,7 +16,6 @@ import {
   Clock,
   BarChart,
   Users,
-  FileText,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -36,7 +35,6 @@ export function AppSidebar({ user }: AppSidebarProps) {
     { href: "/my-logs", label: "My Logs", icon: Clock, roles: ['developer', 'project-manager', 'finance', 'admin'] },
     { href: "/projects", label: "Projects", icon: Briefcase, roles: ['project-manager', 'admin'] },
     { href: "/reports", label: "Reports", icon: BarChart, roles: ['finance', 'project-manager', 'admin'] },
-    { href: "/invoices", label: "Invoices", icon: FileText, roles: ['finance', 'admin'] },
     { href: "/admin", label: "Admin", icon: Users, roles: ['admin'] },
   ];
 
