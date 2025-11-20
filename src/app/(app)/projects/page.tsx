@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { PlusCircle } from "lucide-react";
+import { PlusCircle, Copy } from "lucide-react";
 
 export default function ProjectsPage() {
   return (
@@ -10,10 +10,16 @@ export default function ProjectsPage() {
           <h2 className="font-headline text-3xl font-bold tracking-tight">Projects</h2>
           <p className="text-muted-foreground">Manage your company's projects.</p>
         </div>
-        <Button>
-          <PlusCircle />
-          Create Project
-        </Button>
+        <div className="flex gap-2">
+           <Button variant="outline">
+            <Copy />
+            Copy Tasks
+          </Button>
+          <Button>
+            <PlusCircle />
+            Create Project
+          </Button>
+        </div>
       </div>
 
       <Card>
