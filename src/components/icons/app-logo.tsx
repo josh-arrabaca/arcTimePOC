@@ -7,7 +7,7 @@ export const AppLogo = ({ className }: { className?: string }) => {
       viewBox="0 0 32 32"
       className={cn("fill-current", className)}
     >
-      <path d="M2,28.5L8,28.5L8,24.1L18.7,4.3L26,24.1L26,28.5L32,28.5L32,22.1L20.2,1.5L12.8,1.5L2,21.6L2,28.5Z" />
+      <path d="M5.5,26.5L11.5,26.5L17.5,7.5L25.5,26.5L2,26.5" fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round" />
     </svg>
   );
 };
